@@ -46,5 +46,6 @@ node_modules/
 /priv/static/
 /config/prod.secret.exs
 /rel
+/.env
 
 # End of https://www.gitignore.io/api/linux,erlang,elixir,phoenix

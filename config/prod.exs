@@ -61,4 +61,13 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+config :discuss, DiscussWeb.Endpoint,
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
+
+# Configure your database
+config :discuss, Discuss.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: System.get_env("DB_USER"),
+  password: System.get_env("DB_PASS"),
+  database: System.get_env("DB_DB"),
+  pool_size: 15
